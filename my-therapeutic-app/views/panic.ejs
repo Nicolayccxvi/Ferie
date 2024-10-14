@@ -1,0 +1,12 @@
+<div id="panic">
+    <button onclick="triggerPanicMode()">Panic Button</button>
+    <div id="calm-instructions"></div>
+</div>
+
+<script>
+    async function triggerPanicMode() {
+        const response = await fetch('/panic/activate');
+        const data = await response.json();
+        document.getElementById('calm-instructions').innerText = data.message + '\n' + data.instructions;
+    }
+</script>
