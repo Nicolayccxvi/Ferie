@@ -14,6 +14,6 @@
             body: JSON.stringify({ message })
         });
         const data = await response.json();
-        document.getElementById('chat-history').innerHTML += `<p>User: ${message} 
+        document.getElementById('chat-history').innerHTML += `<p>User: ${message}</p><p>Companion: ${data.response}</p>`;
     }
 </script>
